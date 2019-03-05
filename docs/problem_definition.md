@@ -37,7 +37,7 @@ We use the [mean reciprocal rank](https://en.wikipedia.org/wiki/Mean_reciprocal_
 
 ## Data
 
-The data will be provided on the official website of the challenge: [trivag RecSys Challenge](https://recsys.trivago.cloud/).
+The data will be provided on the official website of the challenge: [trivago RecSys Challenge](https://recsys.trivago.cloud/).
 
 ### Session actions (train.csv and test.csv) 
 
