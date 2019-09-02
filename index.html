@@ -1,230 +1,377 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="ACM RecSys Challenge 2019">
-      <meta name="keywords" content="Recommender Systems, ACM RecSys Challenge, Music Recommendation, Automatic Playlist Continuation, Spotify">
-      <meta name="author" content="RecSysChallenge 2019 Organizers">
-      <link rel="icon" href="http://recsys.acm.org/wp-content/themes/primo-wp/favicon.ico">
-      <title>ACM RecSys Challenge 2019</title>
-      <!-- CSS -->
-      <link href="./css/bootstrap.min.css" rel="stylesheet">
-      <link href="./css/ekko-lightbox.min.css" rel="stylesheet">
-      <link href="./css/main.css" rel="stylesheet">
-   </head>
-   <body>
-      <div id="top" class="container">
-         <div class="header clearfix" style="padding-bottom:5px;">
-            <span style="float:left; padding-right: 15px;">
+
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="ACM RecSys Challenge 2019">
+   <meta name="keywords"
+      content="Recommender Systems, ACM RecSys Challenge, Music Recommendation, Automatic Playlist Continuation, Spotify">
+   <meta name="author" content="RecSysChallenge 2019 Organizers">
+   <link rel="icon" href="http://recsys.acm.org/wp-content/themes/primo-wp/favicon.ico">
+   <title>ACM RecSys Challenge 2019</title>
+   <!-- CSS -->
+   <link href="./css/bootstrap.min.css" rel="stylesheet">
+   <link href="./css/ekko-lightbox.min.css" rel="stylesheet">
+   <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+   <div id="top" class="container">
+      <div class="header clearfix" style="padding-bottom:5px;">
+         <span style="float:left; padding-right: 15px;">
             <img src="./images/logo.png" alt="logo" width="50"> </span> <span style="float:right; padding-right: 15px;">
-            <a style="text-decoration: none;" href="https://twitter.com/recsyschallenge"
-               title="Twitter"> <img src="./images/ico-twitter.svg" alt="" width="24">
+            <a style="text-decoration: none;" href="https://twitter.com/recsyschallenge" title="Twitter"> <img
+                  src="./images/ico-twitter.svg" alt="" width="24">
             </a> </span>
-            <h3><a href="http://recsyschallenge.com/2019" style="text-decoration:none;">ACM
+         <h3><a href="http://recsyschallenge.com/2019" style="text-decoration:none;">ACM
                RecSys Challenge 2019</a>
-            </h3>
-            <div style="margin-top:30px;font-family: Georgia,Helvetica,Arial,sans-serif">
-               <ul class="nav nav-pills navbar-nav navbar-left">
-                  <!--
+         </h3>
+         <div style="margin-top:30px;font-family: Georgia,Helvetica,Arial,sans-serif">
+            <ul class="nav nav-pills navbar-nav navbar-left">
+               <!--
                      <li role="presentation" class="dropdown">              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span>
                        </a>              <ul class="dropdown-menu">
                          <li><a href="#about">About</a></li>                <li><a href="#scenario">Scenario</a></li>
                          <li><a href="#challenges">Challenges</a></li>                <li><a href="#evaluation">Evaluation</a></li>
                          <li><a href="#dataset">Dataset</a></li>                <li><a href="#baseline">Baseline</a>
                      </ul>            </li>-->
-                  <!--
+               <!--
                      <li role="presentation" class="dropdown">              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Participate <span class="caret"></span>
                        </a>              <ul class="dropdown-menu">
                          <li><a href="#participation">Participation</a></li>                <li><a href="#leaderboard">Leaderboard</a>
                          <li><a href="#rules">Rules</a></li>                <li><a href="#questions">Ask questions</a></li>
                          <li><a href="#prizes">Prizes</a></li>              </ul>
                      </li>-->
-                  <li role="presentation"><a href="#about">About</a></li>
-                  <li role="presentation"><a href="#publications">Publications</a></li>
-                  <!--<li role="presentation"><a href="#program">Program</a></li>-->
-                  <li role="presentation"><a href="#participation">Participation</a></li>
-                  <li role="presentation"><a href="#dates">Timeline</a></li>
-                  <li role="presentation"><a href="#organizers">Organizers</a></li>
-                  <li role="presentation"><a href="https://recsys.acm.org/recsys19/" style="color:lightgray;"
+               <li role="presentation"><a href="#about">About</a></li>
+               <li role="presentation"><a href="#publications">Publications</a></li>
+               <li role="presentation"><a href="#participation">Participation</a></li>
+               <li role="presentation"><a href="#dates">Timeline</a></li>
+               <li role="presentation"><a href="#program">Program</a></li>
+               <li role="presentation"><a href="#organizers">Organizers</a></li>
+               <li role="presentation"><a href="https://recsys.acm.org/recsys19/" style="color:lightgray;"
                      target="\_blank">RecSys 2019</a></li>
-               </ul>
-            </div>
-         </div>
-         <!-- ABOUT -->
-         <div id="about" class="lead" align="justify">
-            <h1>About</h1>
-            <p > The RecSys Challenge 2019 will be organized by <a href="http://www.trivago.com">trivago</a>, <a href="https://www.tuwien.ac.at/">TU Wien</a>, <a href="https://www.polimi.it/en">Politecnico di Milano</a>, and <a href="http://www.kit.edu/">Karlsruhe Institute of Technology</a>. trivago is a global hotel search platform focused on reshaping the way travelers search for and compare hotels, while enabling advertisers of hotels to grow their businesses by providing access to a broad audience of travelers via our websites and apps. trivago has established 55 localized platforms in over 190 countries and provides access to over two million hotels, including alternative accommodations, with prices and availability from over 400+ booking sites and hotel chains.  </p>
-            <p> This year’s challenge focuses on travel metasearch. The goal of this challenge is to develop a session-based and context-aware recommender system using various input data to provide a list of accommodations that will match the needs of the user. </p>
-            <p> In the challenge, participants will be tasked with predicting which accommodations (items) have been clicked in the search result during the last part of a user session in an offline evaluation setup. To this end, trivago will release a public dataset of hotel search sessions. </p>
-            <p>A detailed description of the challenge will be made available soon (see tentative timeline).</p>
-         </div>
-         <div id="Publications" class="lead" align="justify">
-               <h1>Publications</h1>
-               <p>Peter Knees, Yashar Deldjoo, Farshad Bakhshandegan Moghaddam, Jens Adamczak, Gerard-Paul Leyson, and Philipp Monreal. 2019. "<a target="\_blank" href="https://drive.google.com/open?id=1Y-kkaK-oqDoE6OuyXFgfVabrGZV_dVBb">RecSys Challenge 2019: Session-based Hotel Recommendations."</a> In Thirteenth ACM Conference on Recommender Systems (RecSys ’19), September 16–20, 2019, Copenhagen, Denmark. 2 pages. https://doi.org/10.1145/3298689.3346974, <a href="https://drive.google.com/open?id=1YkWvTRgkWwyAwplnSgS1myw3b7Sk5CrS">BibTex</a></p>
-               <p>Jens Adamczak, Gerard-Paul Leyson, Peter Knees, Yashar Deldjoo, Farshad Bakhshandegan Moghaddam, Julia Neidhardt, Wolfgang Wörndl, and Philipp Monreal. 2019. "<a target="\_blank" href="https://arxiv.org/pdf/1908.00071.pdf">Session-Based Hotel Recommendations: Challenges and Future Directions."</a> arXiv:1908.00071, <a href="https://drive.google.com/open?id=1qswDKxcMi6zNvR5buCFuh5SOoJahH8rU">BibTex</a></p>               
-             </div>
-         <div id="participation" class="lead" align="justify">
-            <h1>Participation and Data</h1>
-            <p> The data for this year's challenge is provided by trivago and can be
-              downloaded from <a target="\_blank" href="https://recsys.trivago.cloud/">https://recsys.trivago.cloud/</a>.
-              You can access the data once you create an account and agree with the terms and conditions. The information on the challenge participation
-              can also be found on this website.</p>
-          </div>
-         <div id="dates">
-            <h1>Timeline<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span> top</a></sup></h1>
-            <p><font size="5">Note: the timeline is subject to slight modifications.</font></p>
-            <table class="table table-striped lead">
-               <thead>
-                  <tr>
-                     <th>When?</th>
-                     <th>What?</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr>
-                     <td>March 2019</td>
-                     <td>
-                        <strong>Dataset Release & RecSys Challenge starts</strong>
-                        <ul>
-                              <li>The data can be downloaded from <a target="\_blank" href="https://recsys.trivago.cloud/">https://recsys.trivago.cloud/</a>.</li>
-                        </ul>
-                        <font color="green"><strong>The website will go live on March 05.</strong></font>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>June 30, 2019</td>
-                     <td> <strong>RecSys Challenge ends</strong>
-                     </br>
-                     <font color="green"><strong>Final submission due (11:59 PM in the UTC-12:00 time zone).</strong></font>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>July 2019</td>
-                     <td><strong>Announcement of the final leaderboard and winners</strong>
-                        </br>
-                        <strong>Paper submission for RecSys Challenge Workshop</strong>
-                        </strong>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>July 22, 2019</td>
-                     <td><strong>Paper submission due</strong></br>
-                     23:59, AoE (Anywhere on Earth)
-                     </br><font color="green"><strong>See paper submission guidelines</strong></font>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>August 01, 2019</td>
-                     <td><strong>Paper Acceptance Notifications</strong>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td><strike>August 14, 2019</strike></td>
-                     <td><strong>Camera-ready due</strong> for the accepted papers.<br>
-                        <font color="green"><strong>Extended to August 28, 2019</strong></font></td>
-                  </tr>
-                  <tr>
-                     <td>September 16-20, 2019</td>
-                     <td>Workshop will take place as part of the <a href="https://recsys.acm.org/recsys19/">ACM RecSys conference</a> in Copenhagen, Denmark.
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <!-- GUIDELINES -->
-         <div id="guidelines" class="lead" align="justify">
-           <h1>Paper Submission Guidelines<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span> top</a></sup></h1>
-           <ul>
-              <li>All participants of the challenge are invited to submit if they consider their submission particularly effective, novel, otherwise interesting, or exploiting identified particularities of the data.</li>
-              <li><font color="green"><strong>Note:</strong></font> paper submission is mandatory if you want to be eligible for a prize (top 5). Accepted papers are given an oral and a poster presentation slot at the workshop. At least one author of each accepted paper must attend the workshop and present their work. Please note that a badly written paper or absence of presence at workshop, may prevent you from being eligible for the prize. Please contact the workshop organization if none of the authors will be able to attend the workshop.</li>
-              <li><font color="green"><strong>Page limit:</strong></font> 4 pages + 1 page references  (<a href="https://www.acm.org/publications/proceedings-template">ACM SIG Format</a>)</li>
-              <li>Anonymization of submissions is not required; please include your team name in abstract and text, as well as a link to your code repository, the achieved score, and a reference to the RecSys Challenge Website (<a href="http://www.recsyschallenge.com/2019/">http://www.recsyschallenge.com/2019/</a>). Note: This will be replaced with a reference to an overview paper in the RecSys proceedings for the camera-ready version.</li>
-              <li><font color="green"><strong>Submission website:</strong></font> <a href="https://easychair.org/conferences/?conf=rsc19ws">EasyChair</a></li>
-              <li>The submitted papers will be evaluated based on novelty, clarity, and presented empirical results.</li>
-              <li>Each paper will be reviewed by at least three PC members.</li>
-              <li>Accepted papers will be published in the ACM Digital Library.</li>
-              <li>Accepted papers must be presented in the RecSys Challenge Workshop (either as an oral presentation or poster).</li>
-           </ul>
-           The workshop will feature presentations of accepted contributions to the RecSys Challenge 2019 organized by trivago, TU Wien, Polytechnic University of Bari, and Karlsruhe Institute of Technology. In the challenge, which originates from the domain of online travel recommender systems, participants have to build a click-prediction model based on user session interactions. All submissions presented in the workshop will have gone through a thorough paper review process and describe the best performing or otherwise notable approaches submitted to the challenge.
-           </br></br>
-
-           <font color="green"><strong>Link to the workshop website:</strong></font></br>
-           <a href="https://recsys.acm.org/recsys19/challenge-workshop/">https://recsys.acm.org/recsys19/challenge-workshop/</a>
-
-
-         </div>
-
-         <!-- ORGANIZERS -->
-         <div id="organizers" class="lead">
-            <h1>Program Committee <sup><a class="dropup" style="font-size:10px;"
-               href="#top"><span class="caret"></span> top</a></sup></h1>
-            <ul>
-               <li>Derek Bridge, University College Cork, Ireland</li>
-               <li>Catalin-Mihai	Barbu, University of Duisburg-Essen, Germany</li>
-               <li>Himan Abdollahpouri, University of Colorado Boulder, USA</li>
-               <li>Marko Tkalcic, Free University of Bozen-Bolzano, Italy</li>
-               <li>Julia Neidhardt, Vienna University of Technology, Austria</li>
-               <li>David Zibriczky, trivago, Germany</li>
-               <li>Massimo	Quadrana, Pandora, Denmark</li>               
-               <li>Andreu Vall, Johannes Kepler University, Austria</li>
-               <li>Dietmar	Jannach, University of Klagenfurt, Austria</li>
-               <li>Alejandro Bellogin, Universidad Autonoma de Madrid, Spain</li>
-               <li>Amra	Delić, TU Wien, Austria</li>
-               <li>Mehdi Elahi, Free University of Bozen-Bolzano, Italy</li>
-               <li>Dimitris Sacharidis, Vienna University of Technology, Austria</li>               
-               <li>Hamed Zamani, University of Massachusetts Amherst, USA</li>
-               <li>Vito Walter Anelli, Politecnico di Bari, Italy</li>
-               <li>Amra Delić, TU Wien, Austria</li>
-               <li>Mete Sertkan, Vienna University of Technology, Austria</li>
-               <!-- <li>Jens	Adamczak, trivago, Germany</li> -->
-               <!-- <li>Philipp	Monreal, trivago, Germany</li> -->
-               <!-- <li>Gerard-Paul Leyson, trivago, Germany</li> -->
             </ul>
-            <h1>Challenge Organizers <sup><a class="dropup" style="font-size:10px;"
-               href="#top"><span class="caret"></span> top</a></sup></h1>
-            <ul>
-               <li><a href="https://www.linkedin.com/in/philipp-monreal-095a2648?originalSubdomain=de" target="\_blank">Philipp Monreal</a>, trivago, Germany</li>
-               <li><a href="https://about.me/wolfganggassler" target="\_blank">Wolfgang Gassler</a>, trivago, Germany</li>
-               <li><a href="https://www.linkedin.com/in/jensadamczak/" target="\_blank">Jens Adamczak</a>, trivago, Germany</li>
-               <li>Gerard Leyson, trivago, Germany</li>
-               <li><a href="https://www.ifs.tuwien.ac.at/~knees/" target="\_blank">Peter Knees</a>, TU Wien, Austria</li>
-               <li><a href="https://yasdel.github.io" target="\_blank">Yashar Deldjoo</a>, Politecnico di Milano, Italy</li>
-               <li><a href="http://www.aifb.kit.edu/web/Farshad_Bakhshandegan_Moghaddam" target="\_blank">Farshad Bakhshandegan Moghaddam</a>, Karlsruhe Institute of Technology, Germany</li>
-            </ul>
-<h1>Advisors <sup><a class="dropup" style="font-size:10px;" href="#top"><span
-
-                  class="caret"></span> top</a></sup></h1>
-          <ul>
-	    <li><a href="https://www.linkedin.com/in/david-zibriczky/" target="\_blank">Dávid Zibriczky</a>, DB Schenker, Germany</li>
-            <li><a href="http://www.cp.jku.at/people/schedl/" target="\_blank">Markus Schedl</a>, Johannes Kepler University, Linz, Austria</li>
-	    <li><a href="https://people.cs.umass.edu/~zamani/" target="\_blank">Hamed Zamani</a>, University of Massachusetts Amherst, MA, USA</li>
-	    <li><a href="https://www.unibz.it/en/faculties/computer-science/academic-staff/person/31096-mehdi-elahi" target="\_blank">Mehdi Elahi</a>, Free University of Bozen, Bolzano</li>
-          </ul>
          </div>
-         <!-- /.container -->
-         <!-- JavaScript -->
-         <script src="./js/jquery-1.11.3.min.js"></script>
-         <script src="./js/bootstrap.min.js"></script>
-         <script src="./js/ekko-lightbox.min.js"></script>
-         <script type="text/javascript">
-            $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-              event.preventDefault();
-              $(this).ekkoLightbox();
-            });
-         </script>
-         <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-70716117-1', 'auto');
-            ga('send', 'pageview');
-
-         </script>
       </div>
-   </body>
+      <!-- ABOUT -->
+      <div id="about" class="lead" align="justify">
+         <h1>About</h1>
+         <p> The RecSys Challenge 2019 will be organized by <a href="http://www.trivago.com">trivago</a>, <a
+               href="https://www.tuwien.ac.at/">TU Wien</a>, <a href="https://www.polimi.it/en">Politecnico di
+               Milano</a>, and <a href="http://www.kit.edu/">Karlsruhe Institute of Technology</a>. trivago is a global
+            hotel search platform focused on reshaping the way travelers search for and compare hotels, while enabling
+            advertisers of hotels to grow their businesses by providing access to a broad audience of travelers via our
+            websites and apps. trivago has established 55 localized platforms in over 190 countries and provides access
+            to over two million hotels, including alternative accommodations, with prices and availability from over
+            400+ booking sites and hotel chains. </p>
+         <p> This year’s challenge focuses on travel metasearch. The goal of this challenge is to develop a
+            session-based and context-aware recommender system using various input data to provide a list of
+            accommodations that will match the needs of the user. </p>
+         <p> In the challenge, participants will be tasked with predicting which accommodations (items) have been
+            clicked in the search result during the last part of a user session in an offline evaluation setup. To this
+            end, trivago will release a public dataset of hotel search sessions. </p>
+         <p>A detailed description of the challenge will be made available soon (see tentative timeline).</p>
+      </div>
+      <div id="Publications" class="lead" align="justify">
+         <h1>Publications</h1>
+         <p>Peter Knees, Yashar Deldjoo, Farshad Bakhshandegan Moghaddam, Jens Adamczak, Gerard-Paul Leyson, and Philipp
+            Monreal. 2019. "<a target="\_blank"
+               href="https://drive.google.com/open?id=1Y-kkaK-oqDoE6OuyXFgfVabrGZV_dVBb">RecSys Challenge 2019:
+               Session-based Hotel Recommendations."</a> In Thirteenth ACM Conference on Recommender Systems (RecSys
+            ’19), September 16–20, 2019, Copenhagen, Denmark. 2 pages. https://doi.org/10.1145/3298689.3346974, <a
+               href="https://drive.google.com/open?id=1YkWvTRgkWwyAwplnSgS1myw3b7Sk5CrS">BibTex</a></p>
+         <p>Jens Adamczak, Gerard-Paul Leyson, Peter Knees, Yashar Deldjoo, Farshad Bakhshandegan Moghaddam, Julia
+            Neidhardt, Wolfgang Wörndl, and Philipp Monreal. 2019. "<a target="\_blank"
+               href="https://arxiv.org/pdf/1908.00071.pdf">Session-Based Hotel Recommendations: Challenges and Future
+               Directions."</a> arXiv:1908.00071, <a
+               href="https://drive.google.com/open?id=1qswDKxcMi6zNvR5buCFuh5SOoJahH8rU">BibTex</a></p>
+      </div>
+      <div id="participation" class="lead" align="justify">
+         <h1>Participation and Data</h1>
+         <p> The data for this year's challenge is provided by trivago and can be
+            downloaded from <a target="\_blank" href="https://recsys.trivago.cloud/">https://recsys.trivago.cloud/</a>.
+            You can access the data once you create an account and agree with the terms and conditions. The information
+            on the challenge participation
+            can also be found on this website.</p>
+      </div>
+      <div id="dates">
+         <h1>Timeline<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+                  top</a></sup></h1>
+         <p>
+            <font size="5">Note: the timeline is subject to slight modifications.</font>
+         </p>
+         <table class="table table-striped lead">
+            <thead>
+               <tr>
+                  <th>When?</th>
+                  <th>What?</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>March 2019</td>
+                  <td>
+                     <strong>Dataset Release & RecSys Challenge starts</strong>
+                     <ul>
+                        <li>The data can be downloaded from <a target="\_blank"
+                              href="https://recsys.trivago.cloud/">https://recsys.trivago.cloud/</a>.</li>
+                     </ul>
+                     <font color="green"><strong>The website will go live on March 05.</strong></font>
+                  </td>
+               </tr>
+               <tr>
+                  <td>June 30, 2019</td>
+                  <td> <strong>RecSys Challenge ends</strong>
+                     </br>
+                     <font color="green"><strong>Final submission due (11:59 PM in the UTC-12:00 time zone).</strong>
+                     </font>
+                  </td>
+               </tr>
+               <tr>
+                  <td>July 2019</td>
+                  <td><strong>Announcement of the final leaderboard and winners</strong>
+                     </br>
+                     <strong>Paper submission for RecSys Challenge Workshop</strong>
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td>July 22, 2019</td>
+                  <td><strong>Paper submission due</strong></br>
+                     23:59, AoE (Anywhere on Earth)
+                     </br>
+                     <font color="green"><strong>See paper submission guidelines</strong></font>
+                  </td>
+               </tr>
+               <tr>
+                  <td>August 01, 2019</td>
+                  <td><strong>Paper Acceptance Notifications</strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strike>August 14, 2019</strike></td>
+                  <td><strong>Camera-ready due</strong> for the accepted papers.<br>
+                     <font color="green"><strong>Extended to August 28, 2019</strong></font>
+                  </td>
+               </tr>
+               <tr>
+                  <td>September 16-20, 2019</td>
+                  <td>Workshop will take place as part of the <a href="https://recsys.acm.org/recsys19/">ACM RecSys
+                        conference</a> in Copenhagen, Denmark.
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <!-- GUIDELINES -->
+      <div id="guidelines" class="lead" align="justify">
+         <h1>Paper Submission Guidelines<sup><a class="dropup" style="font-size:10px;" href="#top"><span
+                     class="caret"></span> top</a></sup></h1>
+         <ul>
+            <li>All participants of the challenge are invited to submit if they consider their submission particularly
+               effective, novel, otherwise interesting, or exploiting identified particularities of the data.</li>
+            <li>
+               <font color="green"><strong>Note:</strong></font> paper submission is mandatory if you want to be
+               eligible for a prize (top 5). Accepted papers are given an oral and a poster presentation slot at the
+               workshop. At least one author of each accepted paper must attend the workshop and present their work.
+               Please note that a badly written paper or absence of presence at workshop, may prevent you from being
+               eligible for the prize. Please contact the workshop organization if none of the authors will be able to
+               attend the workshop.
+            </li>
+            <li>
+               <font color="green"><strong>Page limit:</strong></font> 4 pages + 1 page references (<a
+                  href="https://www.acm.org/publications/proceedings-template">ACM SIG Format</a>)
+            </li>
+            <li>Anonymization of submissions is not required; please include your team name in abstract and text, as
+               well as a link to your code repository, the achieved score, and a reference to the RecSys Challenge
+               Website (<a href="http://www.recsyschallenge.com/2019/">http://www.recsyschallenge.com/2019/</a>). Note:
+               This will be replaced with a reference to an overview paper in the RecSys proceedings for the
+               camera-ready version.</li>
+            <li>
+               <font color="green"><strong>Submission website:</strong></font> <a
+                  href="https://easychair.org/conferences/?conf=rsc19ws">EasyChair</a>
+            </li>
+            <li>The submitted papers will be evaluated based on novelty, clarity, and presented empirical results.</li>
+            <li>Each paper will be reviewed by at least three PC members.</li>
+            <li>Accepted papers will be published in the ACM Digital Library.</li>
+            <li>Accepted papers must be presented in the RecSys Challenge Workshop (either as an oral presentation or
+               poster).</li>
+         </ul>
+         The workshop will feature presentations of accepted contributions to the RecSys Challenge 2019 organized by
+         trivago, TU Wien, Polytechnic University of Bari, and Karlsruhe Institute of Technology. In the challenge,
+         which originates from the domain of online travel recommender systems, participants have to build a
+         click-prediction model based on user session interactions. All submissions presented in the workshop will have
+         gone through a thorough paper review process and describe the best performing or otherwise notable approaches
+         submitted to the challenge.
+         </br></br>
+
+         <font color="green"><strong>Link to the workshop website:</strong></font></br>
+         <a
+            href="https://recsys.acm.org/recsys19/challenge-workshop/">https://recsys.acm.org/recsys19/challenge-workshop/</a>
+
+
+      </div>
+
+      <div class="lead" id="program">
+         <h1>Workshop Program and Accepted Papers</h1>
+         <table class="table table-striped lead" align="left">
+            <tbody>
+               <tr>
+                  <th>Time</th>
+                  <th> Session </th>
+               </tr>
+               <tr>
+                  <td>09:00 <br/>-<br/> 09:30</td>
+                  <td>
+                     <strong>Workshop Opening</strong>:
+                     <ul>
+                        <li>Welcome Address. <i>Peter Knees (TU Wien)</i></li>
+                        <li>Challenge Results and Overview. <i>Jens Adamczak (trivago)</i></li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td>09:30 <br/>-<br/> 10:30</td>
+                  <td>
+                     <strong>Paper Session 1 (each 25+5’)</strong>:
+                     <ul class="lead">
+                        <li>Boosting algorithms for session-based, context-aware recommender system in online travel domain. <i>Paweł Jankiewicz (LogicAI)</i></li>
+                        <li>Deep and Classical Re-Ranking of Online Recommendations using Contextualized Session-Based Feedback. <i>Felipe Perez (Layer 6 AI)</i></li>                        
+                     </ul>
+                  </td>
+               </tr>
+
+               <tr style="color:gray;">
+                  <td>10:30 <br/>-<br/> 11:00 </td>
+                  <td align="center"> <br/>Coffee Break <i>supported by Trivago</i></td>
+               </tr>
+               <tr>
+                  <td>11:00 <br/>-<br/> 12:30</td>
+                  <td>
+                     <strong>Paper Session 2 (each 25+5’)</strong>:
+                     <ul class="lead">
+                        <li>Session-based Item Recommendation with Pairwise Features. <i>Zhe Wang (Meituan Dianping)</i></li>
+                        <li>A-HA: A Hybrid Approach for Hotel Recommendation. <i>Lee Yi-Ting (National Taiwan University)</i></li>
+                        <li>Learning to Rank Hotels for Search and Recommendation from Session-based Interaction Logs and Meta Data. <i>Malte Ludewig (TU Dortmund)</i></li>                        
+                     </ul>
+                  </td>
+               </tr>
+               <tr style="color:gray;">
+                  <td>12:30 <br/>-<br/> 14:00</td>
+                  <td align="center"> <br/>Lunch Break (lunch not provided) </td>
+               </tr>
+               <tr>
+                  <td>14:00 <br/>-<br/> 15:30</td>
+                  <td>
+                     <strong>Paper Session 3 (each 15+5’)</strong>:
+                     <ul class="lead">
+                        <li>A Neural Network for session-based and context-aware recommendations: solution to the RecSys Challenge 2019. <i>Ricardo Gama (Polytechnic Institute of Viseu) and Hugo Fernandes (Rockets of Awesome)</i></li>
+                        <li>Leveraging laziness, Browsing-Pattern Aware Stacked Models for Sequential Accommodation Learning to Rank. <i> Federico Piccinini (Politecnico di Milano)</i></li>
+                        <li>Accelerating Recommender System Training 15x with RAPIDS. <i>Even Oldridge (NVidia)</i></li>
+                        <li>A Pipelined Hybrid Recommender System for Ranking the Items on the Display. <i>Jaehoon Oh (KAIST)</i></li>
+                     </ul>
+                  </td>
+               </tr>
+               <tr style="color:gray;">
+                  <td>15:30 <br/>-<br/> 16:00</td>
+                  <td align="center"> <br/>Coffee Break </td>
+               </tr>
+               <tr>
+                  <td>16:00 <br/>-<br/> 17:30</td>
+                  <td>
+                     <strong>Panel: What did we learn from the RecSys Challenge’19?</strong>:
+                     <ul class="lead">
+                        <li>Speakers tbd</li>                        
+                     </ul>
+                  </td>
+               </tr>
+               <tr>
+                  <td>17:30</td>
+                  <td> <strong>Workshop closing</strong> </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+      <!-- ORGANIZERS -->
+      <div id="organizers" class="lead">
+         <h1>Program Committee <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+                  top</a></sup></h1>
+         <ul>
+            <li>Derek Bridge, University College Cork, Ireland</li>
+            <li>Catalin-Mihai Barbu, University of Duisburg-Essen, Germany</li>
+            <li>Himan Abdollahpouri, University of Colorado Boulder, USA</li>
+            <li>Marko Tkalcic, Free University of Bozen-Bolzano, Italy</li>
+            <li>Julia Neidhardt, Vienna University of Technology, Austria</li>
+            <li>David Zibriczky, trivago, Germany</li>
+            <li>Massimo Quadrana, Pandora, Denmark</li>
+            <li>Andreu Vall, Johannes Kepler University, Austria</li>
+            <li>Dietmar Jannach, University of Klagenfurt, Austria</li>
+            <li>Alejandro Bellogin, Universidad Autonoma de Madrid, Spain</li>
+            <li>Amra Delić, TU Wien, Austria</li>
+            <li>Mehdi Elahi, Free University of Bozen-Bolzano, Italy</li>
+            <li>Dimitris Sacharidis, Vienna University of Technology, Austria</li>
+            <li>Hamed Zamani, University of Massachusetts Amherst, USA</li>
+            <li>Vito Walter Anelli, Politecnico di Bari, Italy</li>
+            <li>Amra Delić, TU Wien, Austria</li>
+            <li>Mete Sertkan, Vienna University of Technology, Austria</li>
+            <!-- <li>Jens	Adamczak, trivago, Germany</li> -->
+            <!-- <li>Philipp	Monreal, trivago, Germany</li> -->
+            <!-- <li>Gerard-Paul Leyson, trivago, Germany</li> -->
+         </ul>
+         <h1>Challenge Organizers <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+                  top</a></sup></h1>
+         <ul>
+            <li><a href="https://www.linkedin.com/in/philipp-monreal-095a2648?originalSubdomain=de"
+                  target="\_blank">Philipp Monreal</a>, trivago, Germany</li>
+            <li><a href="https://about.me/wolfganggassler" target="\_blank">Wolfgang Gassler</a>, trivago, Germany</li>
+            <li><a href="https://www.linkedin.com/in/jensadamczak/" target="\_blank">Jens Adamczak</a>, trivago, Germany
+            </li>
+            <li>Gerard Leyson, trivago, Germany</li>
+            <li><a href="https://www.ifs.tuwien.ac.at/~knees/" target="\_blank">Peter Knees</a>, TU Wien, Austria</li>
+            <li><a href="https://yasdel.github.io" target="\_blank">Yashar Deldjoo</a>, Polytechnic University of Bari,
+               Italy</li>
+            <li><a href="http://www.aifb.kit.edu/web/Farshad_Bakhshandegan_Moghaddam" target="\_blank">Farshad
+                  Bakhshandegan Moghaddam</a>, Karlsruhe Institute of Technology, Germany</li>
+         </ul>
+         <h1>Advisors <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+                  top</a></sup></h1>
+         <ul>
+            <li><a href="https://www.linkedin.com/in/david-zibriczky/" target="\_blank">Dávid Zibriczky</a>, DB
+               Schenker, Germany</li>
+            <li><a href="http://www.cp.jku.at/people/schedl/" target="\_blank">Markus Schedl</a>, Johannes Kepler
+               University, Linz, Austria</li>
+            <li><a href="https://people.cs.umass.edu/~zamani/" target="\_blank">Hamed Zamani</a>, University of
+               Massachusetts Amherst, MA, USA</li>
+            <li><a href="https://www.unibz.it/en/faculties/computer-science/academic-staff/person/31096-mehdi-elahi"
+                  target="\_blank">Mehdi Elahi</a>, Free University of Bozen, Bolzano</li>
+         </ul>
+      </div>
+      <!-- /.container -->
+      <!-- JavaScript -->
+      <script src="./js/jquery-1.11.3.min.js"></script>
+      <script src="./js/bootstrap.min.js"></script>
+      <script src="./js/ekko-lightbox.min.js"></script>
+      <script type="text/javascript">
+         $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+         });
+      </script>
+      <script>
+         (function (i, s, o, g, r, a, m) {
+         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+         }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+         ga('create', 'UA-70716117-1', 'auto');
+         ga('send', 'pageview');
+
+      </script>
+   </div>
+</body>
+
 </html>
