@@ -6,7 +6,7 @@ def read_into_df(file):
     """Read csv file into data frame."""
     df = (
         pd.read_csv(file)
-            .set_index(['user_id', 'session_id', 'timestamp', 'step'])
+          .set_index(['user_id', 'session_id', 'timestamp', 'step'])
     )
 
     return df
@@ -41,7 +41,14 @@ def get_reciprocal_ranks(ps):
         return 0.0
 
 
-def score_submissions(subm_csv, gt_csv, objective_function):
+def get_average_precision_at3(ps):
+    """Calculate average precision at 3."""
+    ap3 = (ps.reference == np.array(ps.item_recommendations)[0:3]).sum() / 3.0
+
+    return ap3
+
+
+def score_submissions(subm_csv, gt_csv):
     """Score submissions with given objective function."""
 
     print(f"Reading ground truth data {gt_csv} ...")
@@ -62,7 +69,10 @@ def score_submissions(subm_csv, gt_csv, objective_function):
     )
 
     # score each row
-    df_subm_with_key['score'] = df_subm_with_key.apply(objective_function, axis=1)
-    mrr = df_subm_with_key.score.mean()
+    df_subm_with_key['rr'] = df_subm_with_key.apply(get_reciprocal_ranks, axis=1)
+    df_subm_with_key['ap3'] = df_subm_with_key.apply(get_average_precision_at3, axis=1)
 
-    return mrr
+    mrr = round(df_subm_with_key.rr.mean(), 4)
+    map3 = round(df_subm_with_key.ap3.mean(), 4)
+
+    return mrr, map3

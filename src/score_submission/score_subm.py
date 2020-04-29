@@ -19,9 +19,10 @@ def main(data_path, submission_file, ground_truth_file):
     gt_csv = data_directory.joinpath(ground_truth_file)
     subm_csv = data_directory.joinpath(submission_file)
 
-    mrr = f.score_submissions(subm_csv, gt_csv, f.get_reciprocal_ranks)
+    mrr, map3 = f.score_submissions(subm_csv, gt_csv)
 
-    print(f'Mean reciprocal rank: {mrr}')
+    print(f'Mean reciprocal rank:      {mrr}')
+    print(f'Mean average precision @3: {map3}')
 
 
 if __name__ == '__main__':
