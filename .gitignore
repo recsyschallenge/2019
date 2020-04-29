@@ -51,3 +51,6 @@ MANIFEST
 notebooks
 recsys-challenge-2019-algorithm.iml
 *.ipynb_checkpoints
+
+# VSCode
+.vscode
